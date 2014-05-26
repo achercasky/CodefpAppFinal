@@ -15,6 +15,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.codefp.android.R;
+import com.codefp.android.adapter.MenuListAdapter;
+import com.codefp.android.model.MenuOptions;
+import com.codefp.android.service.CodefpService;
+
+import java.util.List;
 
 
 /**
@@ -27,6 +32,7 @@ public abstract class MenuActivity extends ActionBarActivity {
     private ListView mDrawerList;
     private CharSequence mTitle;
     private ActionBarDrawerToggle mDrawerToggle;
+    private List<MenuOptions> menuOptionsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +40,18 @@ public abstract class MenuActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
 
         mTitle = "test";
+        menuOptionsList = new CodefpService(getApplicationContext()).getMenuOptionsList();
 
-        mPlanetTitles = new String[]{"one", "two", "three"};
+//        mPlanetTitles = new String[]{"one", "two", "three"};
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
+        MenuListAdapter menuListAdapter = new MenuListAdapter(this, menuOptionsList);
+        mDrawerList.setAdapter(menuListAdapter);
+
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.adapter_drawer_item, mPlanetTitles));
+//        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+//                R.layout.adapter_drawer_item, mPlanetTitles));
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
