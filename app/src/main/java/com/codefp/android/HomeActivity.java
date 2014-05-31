@@ -13,7 +13,6 @@ public class HomeActivity extends MenuActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_home);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new HomeFragment()).commit();
 
