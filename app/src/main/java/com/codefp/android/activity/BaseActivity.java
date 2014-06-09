@@ -13,7 +13,7 @@ public abstract class BaseActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);//true
-        getSupportActionBar().setHomeButtonEnabled(false);//true
+        getSupportActionBar().setHomeButtonEnabled(false);//
 
     }
 }
