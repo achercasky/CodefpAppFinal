@@ -2,6 +2,8 @@ package com.codefp.android.activity;
 
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -25,7 +27,7 @@ import java.util.List;
 /**
  * Created by ariel on 11/05/14.
  */
-public abstract class MenuActivity extends ActionBarActivity {
+public abstract class MenuActivity extends BaseActivity {
 
     private String[] mPlanetTitles;
     private DrawerLayout mDrawerLayout;
@@ -77,9 +79,10 @@ public abstract class MenuActivity extends ActionBarActivity {
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
 
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
 
     }
 
@@ -123,7 +126,7 @@ public abstract class MenuActivity extends ActionBarActivity {
 
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
-        setTitle(mPlanetTitles[position]);
+//        setTitle(mPlanetTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
