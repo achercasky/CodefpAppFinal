@@ -67,7 +67,7 @@ public abstract class MenuActivity extends BaseActivity {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle(mTitle);
+//                getSupportActionBar().setTitle(mTitle);
             }
 
             /** Called when a drawer has settled in a completely open state. */
@@ -76,13 +76,11 @@ public abstract class MenuActivity extends BaseActivity {
             }
         };
 
+        //No permite abrir el menu usando dedo
+//        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
 
     }
 
